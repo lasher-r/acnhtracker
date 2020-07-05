@@ -18,11 +18,20 @@ export class CritterIdent extends Component {
         } = this.props
         return (
             <div style={this.boxStyle()}>
-                <img src={icon_url}/>
+                <img src={icon_url} alt={name}/>
                 <h3>{name}</h3>
-                <p>{status}</p>
+                {/* <p>{status}</p> */}
+                <select onChange={(val) => this.handleStateChange(val.target.value)} id="status" name="status">
+                    <option value="uncaught" selected={status === "uncaught"}>Uncaught</option>
+                    <option value="caught" selected={status === "caught"}>Caught</option>
+                    <option value="donated" selected={status === "donated"}>Donated</option>
+                </select>
             </div>
         )
+    }
+
+    handleStateChange = (val) => {
+        this.props.set_status(val)
     }
 }
 

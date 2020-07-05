@@ -16,4 +16,20 @@ router.get("/", function (req, res, next) {
   });
 });
 
+router.put("/:id", function (req, res, next) {
+  console.log(`update ${req.params.id} ${req.body.status}`);
+  let sql = `UPDATE bugs
+            SET status = ?
+            WHERE id = ?`;
+
+  db.all(sql, [req.body.status, req.params.id], (err) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.status(200).send();
+  });
+
+});
+
 module.exports = router;

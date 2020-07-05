@@ -4,20 +4,38 @@ import CritterIdent from "./CritterIdent";
 import CritterCatch from "./CritterCatch";
 
 class CritterItem extends Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       available: false
+    }
+  }
+  
+
   getStyle = () => {
+    const bg = this.props.available ? "#5eba7d" : "#f4f4f4"
     return {
-      background: "#f4f4f4",
+      background: bg,
       padding: "10px",
       borderBottom: "1px #ccc dotted",
-      height: "200px",
+      height: "225px",
     };
   };
 
-  
+  set_status = (status) => {
+    fetch(`http://localhost:3001/api/bugs/${this.props.critter.id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({status:status})
+    })
+  }
 
   render() {
     const {
-      id,
       name,
       status,
       icon_url,
@@ -30,7 +48,7 @@ class CritterItem extends Component {
     return (
       <div style={this.getStyle()}>
         <div >
-          <CritterIdent name={name} status={status} icon_url={icon_url} />
+          <CritterIdent name={name} status={status} icon_url={icon_url} price={price} set_status={this.set_status}/>
         </div>
         <div>
           <CritterCatch
