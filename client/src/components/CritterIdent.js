@@ -26,6 +26,7 @@ export class CritterIdent extends Component {
                     <option value="caught" selected={status === "caught"}>Caught</option>
                     <option value="donated" selected={status === "donated"}>Donated</option>
                 </select>
+                <p>{this.props.price} bells</p>
             </div>
         )
     }
