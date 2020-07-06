@@ -31,10 +31,10 @@ export class Controls extends Component {
         </p>
         <p>
           <input id="month" type="checkbox" onChange={this.sel} /> Show only
-          Available this month.
+          available this month.
         </p>
         <p>
-          <input id="now" type="checkbox" onChange={this.sel} /> Show only Available now.
+          <input id="now" type="checkbox" onChange={this.sel} /> Show only available now.
         </p>
       </div>
     );
