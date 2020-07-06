@@ -25,6 +25,8 @@ app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 const bugsRouter = require('./routes/bugs');
 app.use('/api/bugs', bugsRouter)
+const fishRouter = require('./routes/fish');
+app.use('/api/fish', fishRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

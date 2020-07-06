@@ -2,8 +2,733 @@ const sqlite3 = require("sqlite3").verbose();
 
 const DBSOURCE = "db.sqlite";
 
+const massFishInsert = (db) => {
+  let insert = "INSERT INTO fish (name, icon_url, price, location, times, months_northern) VALUES (?,?,?,?,?,?)";
+
+  db.run(insert, [
+    "Bitterling",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ea/NH-Icon-bitterling.png/revision/latest?cb=20200401003128",
+    900,
+    "River",
+    "[[00]]",
+    "[1, 2, 3, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Pale chub",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-palechub.png/revision/latest?cb=20200401003129",
+    200,
+    "River",
+    "[[09, 16]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Crucian carp",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/0/03/NH-Icon-cruciancarp.png/revision/latest?cb=20200401003129",
+    160,
+    "River",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Dace",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-dace.png/revision/latest?cb=20200401003129",
+    240,
+    "River",
+    "[[16, 09]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Carp",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2c/NH-Icon-carp.png/revision/latest?cb=20200401003129",
+    300,
+    "Pond",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Koi",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/7/74/NH-Icon-koi.png/revision/latest?cb=20200401003129",
+    4000,
+    "Pond",
+    "[[16, 09]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Goldfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ed/NH-Icon-goldfish.png/revision/latest?cb=20200401003129",
+    1300,
+    "Pond",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Pop-eyed goldfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c9/NH-Icon-popeyedgoldfish.png/revision/latest?cb=20200401003129",
+    1300,
+    "Pond",
+    "[[09, 16]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Ranchu goldfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/f/f9/NH-Icon-ranchugoldfish.png/revision/latest?cb=20200401003129",
+    4500,
+    "Pond",
+    "[[09, 16]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Killifish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-killifish.png/revision/latest?cb=20200401003129",
+    300,
+    "Pond",
+    "[[00]]",
+    "[4, 5, 6, 7, 8]"
+    ]);
+    
+    db.run(insert, [
+    "Crawfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/c/cd/NH-Icon-crawfish.png/revision/latest?cb=20200401003129",
+    200,
+    "Pond",
+    "[[00]]",
+    "[4, 5, 6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Soft-shelled turtle",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c3/NH-Icon-softshelledturtle.png/revision/latest?cb=20200401003129",
+    3750,
+    "River",
+    "[[16, 09]]",
+    "[8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Snapping Turtle",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/24/NH-Icon-snappingturtle.png/revision/latest?cb=20200401003129",
+    5000,
+    "River",
+    "[[21, 04]]",
+    "[4, 5, 6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Tadpole",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-tadpole.png/revision/latest?cb=20200401003129",
+    100,
+    "Pond",
+    "[[00]]",
+    "[3, 4, 5, 6, 7]"
+    ]);
+    
+    db.run(insert, [
+    "Frog",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/6/6b/NH-Icon-frog.png/revision/latest?cb=20200401003129",
+    120,
+    "Pond",
+    "[[00]]",
+    "[5, 6, 7, 8]"
+    ]);
+    
+    db.run(insert, [
+    "Freshwater goby",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/e/ee/NH-Icon-freshwatergoby.png/revision/latest?cb=20200401003129",
+    400,
+    "River",
+    "[[16, 09]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Loach",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/7/77/NH-Icon-loach.png/revision/latest?cb=20200401003129",
+    400,
+    "River",
+    "[[00]]",
+    "[3, 4, 5]"
+    ]);
+    
+    db.run(insert, [
+    "Catfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/29/NH-Icon-catfish.png/revision/latest?cb=20200401003129",
+    800,
+    "Pond",
+    "[[16, 09]]",
+    "[5, 6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Giant snakehead",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/0/0c/NH-Icon-giantsnakehead.png/revision/latest?cb=20200401003129",
+    5500,
+    "Pond",
+    "[[09, 16]]",
+    "[6, 7, 8]"
+    ]);
+    
+    db.run(insert, [
+    "Bluegill",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/6/69/NH-Icon-bluegill.png/revision/latest?cb=20200401003129",
+    180,
+    "River",
+    "[[09, 16]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Yellow perch",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1d/NH-Icon-yellowperch.png/revision/latest?cb=20200401003129",
+    300,
+    "River",
+    "[[00]]",
+    "[1, 2, 3, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Black bass",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e2/NH-Icon-blackbass.png/revision/latest?cb=20200401003129",
+    400,
+    "River",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Tilapia",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/5/53/NH-Icon-tilapia.png/revision/latest?cb=20200401003129",
+    800,
+    "River",
+    "[[00]]",
+    "[6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Pike",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/d/dc/NH-Icon-pike.png/revision/latest?cb=20200401003130",
+    1800,
+    "River",
+    "[[00]]",
+    "[9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Pond smelt",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/4/41/NH-Icon-pondsmelt.png/revision/latest?cb=20200401003130",
+    500,
+    "River",
+    "[[00]]",
+    "[1, 2, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Sweetfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/4/40/NH-Icon-sweetfish.png/revision/latest?cb=20200401003129",
+    900,
+    "River",
+    "[[00]]",
+    "[7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Cherry salmon",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5f/NH-Icon-cherrysalmon.png/revision/latest?cb=20200401003129",
+    1000,
+    "River (Clifftop)",
+    "[[16, 09]]",
+    "[3, 4, 5, 6, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Char",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/1/15/NH-Icon-char.png/revision/latest?cb=20200401003129",
+    3800,
+    "River (Clifftop)  Pond",
+    "[[16, 09]]",
+    "[3, 4, 5, 6, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Golden trout",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5c/NH-Icon-goldentrout.png/revision/latest?cb=20200401003129",
+    15000,
+    "River (Clifftop)",
+    "[[16, 09]]",
+    "[3, 4, 5, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Stringfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7b/NH-Icon-stringfish.png/revision/latest?cb=20200401003129",
+    15000,
+    "River (Clifftop)",
+    "[[16, 09]]",
+    "[1, 2, 3, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Salmon",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/f/fb/NH-Icon-salmon.png/revision/latest?cb=20200401003129",
+    700,
+    "River (Mouth)",
+    "[[00]]",
+    "[9]"
+    ]);
+    
+    db.run(insert, [
+    "King salmon",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/f/fd/NH-Icon-kingsalmon.png/revision/latest?cb=20200401003129",
+    1800,
+    "River (Mouth)",
+    "[[00]]",
+    "[9]"
+    ]);
+    
+    db.run(insert, [
+    "Mitten crab",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e3/NH-Icon-mittencrab.png/revision/latest?cb=20200401003129",
+    2000,
+    "River",
+    "[[16, 09]]",
+    "[9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Guppy",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/6/63/NH-Icon-guppy.png/revision/latest?cb=20200401003129",
+    1300,
+    "River",
+    "[[09, 16]]",
+    "[4, 5, 6, 7, 8, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Nibble fish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/8/89/NH-Icon-nibblefish.png/revision/latest?cb=20200401003129",
+    1500,
+    "River",
+    "[[09, 16]]",
+    "[5, 6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Angelfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/6/63/NH-Icon-angelfish.png/revision/latest?cb=20200401003128",
+    3000,
+    "River",
+    "[[16, 09]]",
+    "[5, 6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Betta",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7c/NH-Icon-betta.png/revision/latest?cb=20200401003129",
+    2500,
+    "River",
+    "[[09, 16]]",
+    "[5, 6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Neon tetra",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/d/da/NH-Icon-neontetra.png/revision/latest?cb=20200401003129",
+    500,
+    "River",
+    "[[09, 16]]",
+    "[4, 5, 6, 7, 8, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Rainbowfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/6/68/NH-Icon-rainbowfish.png/revision/latest?cb=20200401003129",
+    800,
+    "River",
+    "[[09, 16]]",
+    "[5, 6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Piranha",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/b/b9/NH-Icon-piranha.png/revision/latest?cb=20200401003130",
+    2500,
+    "River",
+    "[[09, 16], [21, 04]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Arowana",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/b/bf/NH-Icon-arowana.png/revision/latest?cb=20200401003128",
+    10000,
+    "River",
+    "[[16, 09]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Dorado",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/d/df/NH-Icon-dorado.png/revision/latest?cb=20200401003129",
+    15000,
+    "River",
+    "[[04, 21]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Gar",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/9/9f/NH-Icon-gar.png/revision/latest?cb=20200401003129",
+    6000,
+    "Pond",
+    "[[16, 09]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Arapaima",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7f/NH-Icon-arapaima.png/revision/latest?cb=20200401003128",
+    10000,
+    "River",
+    "[[16, 09]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Saddled bichir",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a0/NH-Icon-saddledbichir.png/revision/latest?cb=20200401003130",
+    4000,
+    "River",
+    "[[21, 04]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Sturgeon",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/9/98/NH-Icon-sturgeon.png/revision/latest?cb=20200401003129",
+    10000,
+    "River (Mouth)",
+    "[[00]]",
+    "[1, 2, 3, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Sea butterfly",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8f/NH-Icon-seabutterfly.png/revision/latest?cb=20200401003129",
+    1000,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Sea horse",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/5/55/NH-Icon-seahorse.png/revision/latest?cb=20200401003129",
+    1100,
+    "Sea",
+    "[[00]]",
+    "[4, 5, 6, 7, 8, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Clown fish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2f/NH-Icon-clownfish.png/revision/latest?cb=20200401003129",
+    650,
+    "Sea",
+    "[[00]]",
+    "[4, 5, 6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Surgeonfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/1/11/NH-Icon-surgeonfish.png/revision/latest?cb=20200401003129",
+    1000,
+    "Sea",
+    "[[00]]",
+    "[4, 5, 6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Butterfly fish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8e/NH-Icon-butterflyfish.png/revision/latest?cb=20200401003129",
+    1000,
+    "Sea",
+    "[[00]]",
+    "[4, 5, 6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Napoleonfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/6/6f/NH-Icon-napoleonfish.png/revision/latest?cb=20200401003129",
+    10000,
+    "Sea",
+    "[[04, 21]]",
+    "[7, 8]"
+    ]);
+    
+    db.run(insert, [
+    "Zebra turkeyfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-zebraturkeyfish.png/revision/latest?cb=20200401003130",
+    500,
+    "Sea",
+    "[[00]]",
+    "[4, 5, 6, 7, 8, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Blowfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/3/39/NH-Icon-blowfish.png/revision/latest?cb=20200401003129",
+    5000,
+    "Sea",
+    "[[21, 04]]",
+    "[1, 2, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Puffer fish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1f/NH-Icon-pufferfish.png/revision/latest?cb=20200401003130",
+    250,
+    "Sea",
+    "[[00]]",
+    "[7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Anchovy",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/24/NH-Icon-anchovy.png/revision/latest?cb=20200401003129",
+    200,
+    "Sea",
+    "[[04, 21]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Horse mackerel",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/d/d5/NH-Icon-horsemackerel.png/revision/latest?cb=20200401003129",
+    150,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Barred knifejaw",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/8/8c/NH-Icon-barredknifejaw.png/revision/latest?cb=20200401003128",
+    5000,
+    "Sea",
+    "[[00]]",
+    "[3, 4, 5, 6, 7, 8, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Sea bass",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/22/NH-Icon-seabass.png/revision/latest?cb=20200401003130",
+    400,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Red snapper",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/d/dd/NH-Icon-redsnapper.png/revision/latest?cb=20200401003130",
+    3000,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Dab",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c6/NH-Icon-dab.png/revision/latest?cb=20200401003129",
+    300,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Olive flounder",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/9/9e/NH-Icon-oliveflounder.png/revision/latest?cb=20200401003129",
+    800,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Squid",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/3/3b/NH-Icon-squid.png/revision/latest?cb=20200401003130",
+    500,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Moray eel",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/e/e5/NH-Icon-morayeel.png/revision/latest?cb=20200401003130",
+    2000,
+    "Sea",
+    "[[00]]",
+    "[8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Ribbon eel",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/a/ac/NH-Icon-ribboneel.png/revision/latest?cb=20200401003129",
+    600,
+    "Sea",
+    "[[00]]",
+    "[6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Tuna",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/5/50/NH-Icon-tuna.png/revision/latest?cb=20200401003129",
+    7000,
+    "Pier",
+    "[[00]]",
+    "[1, 2, 3, 4, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Blue marlin",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/2f/NH-Icon-bluemarlin.png/revision/latest?cb=20200401003129",
+    10000,
+    "Pier",
+    "[[00]]",
+    "[1, 2, 3, 4, 7, 8, 9, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Giant trevally",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/7/7b/NH-Icon-gianttrevally.png/revision/latest?cb=20200401003129",
+    4500,
+    "Pier",
+    "[[00]]",
+    "[5, 6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Mahi-mahi",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/8/82/NH-Icon-mahimahi.png/revision/latest?cb=20200401003129",
+    6000,
+    "Pier",
+    "[[00]]",
+    "[5, 6, 7, 8, 9, 10]"
+    ]);
+    
+    db.run(insert, [
+    "Ocean sunfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/5/52/NH-Icon-oceansunfish.png/revision/latest?cb=20200401003129",
+    4000,
+    "Sea",
+    "[[04, 21]]",
+    "[7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Ray",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/d/db/NH-Icon-ray.png/revision/latest?cb=20200401003129",
+    3000,
+    "Sea",
+    "[[04, 21]]",
+    "[8, 9, 10, 11]"
+    ]);
+    
+    db.run(insert, [
+    "Saw shark",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/7/73/NH-Icon-sawshark.png/revision/latest?cb=20200401003129",
+    12000,
+    "Sea",
+    "[[16, 09]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Hammerhead shark",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/2/25/NH-Icon-hammerheadshark.png/revision/latest?cb=20200401003129",
+    8000,
+    "Sea",
+    "[[16, 09]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Great white shark",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/3/38/NH-Icon-greatwhiteshark.png/revision/latest?cb=20200401003129",
+    15000,
+    "Sea",
+    "[[16, 09]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Whale shark",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/1/1c/NH-Icon-whaleshark.png/revision/latest?cb=20200401003129",
+    13000,
+    "Sea",
+    "[[00]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Suckerfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/b/b9/NH-Icon-suckerfish.png/revision/latest?cb=20200401003131",
+    1500,
+    "Sea",
+    "[[00]]",
+    "[6, 7, 8, 9]"
+    ]);
+    
+    db.run(insert, [
+    "Football fish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/a/a5/NH-Icon-footballfish.png/revision/latest?cb=20200401003129",
+    2500,
+    "Sea",
+    "[[16, 09]]",
+    "[1, 2, 3, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Oarfish",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/3/33/NH-Icon-oarfish.png/revision/latest?cb=20200401003129",
+    9000,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Barreleye",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/c/c7/NH-Icon-barreleye.png/revision/latest?cb=20200401003128",
+    15000,
+    "Sea",
+    "[[21, 04]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+    
+    db.run(insert, [
+    "Coelacanth",
+    "https://vignette.wikia.nocookie.net/animalcrossing/images/3/31/NH-Icon-coelacanth.png/revision/latest?cb=20200401003129",
+    15000,
+    "Sea",
+    "[[00]]",
+    "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]"
+    ]);
+        
+}
+
 const massInsert = (db) => {
-  var insert =
+  let insert =
     "INSERT INTO bugs (name, icon_url, price, location, times, months_northern) VALUES (?,?,?,?,?,?)";
 
   db.run(insert, [
@@ -751,6 +1476,26 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
         } else {
           // Table just created, creating some rows
           massInsert(db);
+        }
+      }
+    );
+    db.run(
+      `CREATE TABLE fish (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT, 
+            status TEXT DEFAULT "uncaught",
+            icon_url TEXT, 
+            price INTEGER,
+            location TEXT,
+            times TEXT,
+            months_northern TEXT
+            )`,
+      (err) => {
+        if (err) {
+          // Table already created
+        } else {
+          // Table just created, creating some rows
+          massFishInsert(db);
         }
       }
     );
