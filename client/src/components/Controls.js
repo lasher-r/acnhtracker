@@ -8,7 +8,6 @@ export class Controls extends Component {
   }
 
   typeSel = (e) => {
-    console.log("show ", e.target.id, e.target.checked)
     this.setState({[e.target.id]: e.target.checked})
     this.props.onTypeSel(e.target.id, e.target.checked)
   }

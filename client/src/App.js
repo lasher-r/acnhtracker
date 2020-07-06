@@ -16,13 +16,13 @@ export class App extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3001/api/bugs")
+    fetch(`${window.location.href}api/bugs`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ bugs: data });
       });
 
-    fetch("http://localhost:3001/api/fish")
+    fetch(`${window.location.href}api/fish`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ fish: data });
@@ -30,10 +30,10 @@ export class App extends Component {
   }
 
   onTypeSel = (selected, val) => {
-    if (selected == "fish") {
+    if (selected === "fish") {
       this.setState({ showFish: val });
     }
-    if (selected == "bugs") {
+    if (selected === "bugs") {
       this.setState({ showBugs: val });
     }
   };
