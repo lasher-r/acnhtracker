@@ -20,5 +20,3 @@ To run:
 ```
 npm start
 ```
-
-***There is a bunch of hard coded "localhost" in this, if you can't use this on a client, start there.***
