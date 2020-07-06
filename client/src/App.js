@@ -9,41 +9,10 @@ export class App extends Component {
     caught: false,
     month: false,
     now: false,
-    bugs: [
-    //   {
-    //     "id": 77,
-    //     "name": "Scorpion",
-    //     "status": "uncaught",
-    //     "icon_url": "https://vignette.wikia.nocookie.net/animalcrossing/images/3/34/NH-Icon-scorpion.png/revision/latest?cb=20200401005429",
-    //     "price": 8000,
-    //     "location": "On the Ground",
-    //     "times": "[[19, 04]]",
-    //     "months_northern": "[5, 6, 7, 8, 9, 10]"
-    // }
-    // ,
-    //   {
-    //     id: 2,
-    //     name: "Common bluebottle",
-    //     status: "uncaught",
-    //     icon_url:
-    //       "https://vignette.wikia.nocookie.net/animalcrossing/images/5/5e/NH-Icon-commonbluebottle.png/revision/latest?cb=20200401005428",
-    //     price: 300,
-    //     location: "Flying",
-    //     times: "[04, 19]",
-    //     months_northern: "[4, 5, 6, 7, 8]",
-    //   },
-    //   {
-    //     id: 3,
-    //     name: "Paper kite butterfly",
-    //     status: "uncaught",
-    //     icon_url:
-    //       "https://vignette.wikia.nocookie.net/animalcrossing/images/d/dd/NH-Icon-paperkitebutterfly.png/revision/latest?cb=20200401005429",
-    //     price: 1000,
-    //     location: "Flying",
-    //     times: "[08, 19]",
-    //     months_northern: "[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]",
-    //   },
-    ],
+    bugs: [],
+    fish: [],
+    showFish: true,
+    showBugs: true,
   };
 
   componentDidMount() {
@@ -52,7 +21,22 @@ export class App extends Component {
       .then((data) => {
         this.setState({ bugs: data });
       });
+
+    fetch("http://localhost:3001/api/fish")
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ fish: data });
+      });
   }
+
+  onTypeSel = (selected, val) => {
+    if (selected == "fish") {
+      this.setState({ showFish: val });
+    }
+    if (selected == "bugs") {
+      this.setState({ showBugs: val });
+    }
+  };
 
   onControl = (selected, val) => {
     this.setState({ [selected]: val });
@@ -61,13 +45,25 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <Controls onSelected={this.onControl} />
-        <Critters
-          bugs={this.state.bugs}
-          showOnlyCaught={this.state.caught}
-          showOnlyMonth={this.state.month}
-          showOnlyNow={this.state.now}
-        />
+        <Controls onSelected={this.onControl} onTypeSel={this.onTypeSel} />
+        {this.state.showBugs && (
+          <Critters
+            type={"bugs"}
+            critters={this.state.bugs}
+            showOnlyCaught={this.state.caught}
+            showOnlyMonth={this.state.month}
+            showOnlyNow={this.state.now}
+          />
+        )}
+        {this.state.showFish && (
+          <Critters
+            type={"fish"}
+            critters={this.state.fish}
+            showOnlyCaught={this.state.caught}
+            showOnlyMonth={this.state.month}
+            showOnlyNow={this.state.now}
+          />
+        )}
       </div>
     );
   }

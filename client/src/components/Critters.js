@@ -12,11 +12,11 @@ export class Critters extends Component {
   }
 
   render() {
-    return this.props.bugs.map((bug) => {
+    return this.props.critters.map((critter) => {
       const hideBecauseCaught =
-        this.props.showOnlyCaught && bug.status !== "uncaught";
+        this.props.showOnlyCaught && critter.status !== "uncaught";
       const now_m = new Date().getMonth() + 1;
-      let ms = bug.months_northern
+      let ms = critter.months_northern
         .split(",")
         .map((t) =>
           parseInt(t.replace("[", "").replace("]", "").replace(" ", ""))
@@ -25,12 +25,12 @@ export class Critters extends Component {
       const hideBecauseTime =
         this.props.showOnlyNow &&
         (!ms.includes(now_m) ||
-        !this.checkTimeAvailable(bug.times));
+        !this.checkTimeAvailable(critter.times));
       return (
         !hideBecauseCaught &&
         !hideBecauseMonth &&
-        !hideBecauseTime && <CritterItem critter={bug} key={bug.id} available={(ms.includes(now_m) &&
-            this.checkTimeAvailable(bug.times))}/>
+        !hideBecauseTime && <CritterItem critter={critter} type={this.props.type} key={critter.id} available={(ms.includes(now_m) &&
+            this.checkTimeAvailable(critter.times))}/>
       );
     });
   }

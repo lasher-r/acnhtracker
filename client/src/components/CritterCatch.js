@@ -59,6 +59,9 @@ export class CritterCatch extends Component {
       return MONTHS[m - 1];
     });
     this.setState({ months_str: months_strs.join(" ") });
+    if (splitMonths[splitMonths.length - 1] === m_now) {
+      this.setState({last_chance: true})
+    }
   }
 
   render() {
@@ -73,7 +76,7 @@ export class CritterCatch extends Component {
             : this.state.times}
         </h3>
         <h3>{ms}</h3>
-        <h3>{this.state.last_chance ? "Last Chance" : ""}</h3>
+        <h3 style={{color: "red"}}>{this.state.last_chance ? "Last Chance" : ""}</h3>
       </div>
     );
   }

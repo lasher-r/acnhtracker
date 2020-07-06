@@ -25,7 +25,7 @@ class CritterItem extends Component {
   };
 
   set_status = (status) => {
-    fetch(`http://localhost:3001/api/bugs/${this.props.critter.id}`, {
+    fetch(`http://localhost:3001/api/${this.props.type}/${this.props.critter.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
